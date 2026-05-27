@@ -24,13 +24,13 @@ repository               : "pym666/pym666.github.io"
 author:
   # Biographic information
   avatar           : "profile.png"
-  name             : "Your Sidebar Name"
+  name             : "Yanming Peng"
   pronouns         : # example: "she/her"  
-  bio              : "Short biography for the left-hand sidebar"
-  location         : "Earth"
-  employer         : "Red Brick University"
+  bio              : "Imagination Never Fails People."
+  location         : "Beijing, China"
+  employer         : "Beijing Jiaotong University"
   uri              : # URL
-  email            : "none@example.org" 
+  email            : "pengym@bjtu.edu.cn" 
 
   # Academic websites
   academia         : # URL

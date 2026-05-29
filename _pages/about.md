@@ -7,7 +7,7 @@ redirect_from:
   - /about.html
 ---
 
-I am **Yanming Peng (彭彦铭)**, a first-year Ph.D. student at **Beijing Jiaotong University (BJTU)**, advised by **Prof. Yaping Huang**. Before that, I received my B.S. degree in Computer Science from BJTU.
+I am Yanming Peng (彭彦铭), a first-year Ph.D. student at Beijing Jiaotong University (BJTU), advised by Prof. Yaping Huang. Before that, I received my B.S. degree in Computer Science from BJTU.
 
 My research focuses on **computer vision**, particularly **noisy label learning** and **gaze estimation**. My goal is to develop robust and reliable learning algorithms that can perform well under imperfect or weak supervision.
 
@@ -15,7 +15,7 @@ Before starting my current research, I was actively involved in ICPC-style compe
 
 ## Research Interests
 
-Currently, I am most interested in:
+<!-- Currently, I am most interested in: -->
 
 - **Computer Vision**
 - **Robust Learning**

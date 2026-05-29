@@ -418,7 +418,7 @@
 
     .sidebar {
       position: static;
-      width: auto;
+      width: 20%;
       height: auto;
       max-width: 285px;
       overflow: visible;
@@ -427,6 +427,9 @@
       border-radius: 8px;
       background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(247, 252, 253, 0.9));
       box-shadow: 0 16px 45px rgba(24, 78, 92, 0.09);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
     .page--home {

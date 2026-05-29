@@ -24,7 +24,7 @@ Before starting my current research, I was actively involved in ICPC-style compe
 
 ## News
 
-- **2026.06**: One paper accepted by **CVPR 2026**.
+- **2026.06**: One paper is accepted by **CVPR 2026**.
 
 ## Contact
 

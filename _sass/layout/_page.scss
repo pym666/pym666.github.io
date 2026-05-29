@@ -409,28 +409,17 @@
   max-width: 1180px;
   z-index: 0;
 
-  &:before {
-    content: "";
-    position: absolute;
-    top: -2em;
-    left: -4vw;
-    right: -4vw;
-    height: 240px;
-    pointer-events: none;
-    background:
-      linear-gradient(135deg, rgba(47, 127, 147, 0.13), rgba(82, 173, 200, 0.04) 46%, transparent 72%),
-      linear-gradient(90deg, rgba(24, 95, 122, 0.08), transparent 44%);
-    z-index: -1;
-  }
-
   @include breakpoint($large) {
     padding-left: 1.5em;
     padding-right: 1.5em;
 
     .sidebar {
+      position: static;
       width: 25%;
+      height: auto;
       max-width: 285px;
-      padding: calc(#{$masthead-height} + 1.2rem) 1.2rem 1.4rem;
+      overflow: visible;
+      padding: 1.4rem 1.2rem;
       border: 1px solid rgba(47, 127, 147, 0.16);
       border-radius: 8px;
       background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(247, 252, 253, 0.9));
@@ -508,16 +497,6 @@
     font-size: 1.03em;
     line-height: 1.75;
 
-    > p:first-of-type {
-      margin-bottom: 1.4rem;
-      padding: 1rem 1.1rem;
-      border-left: 4px solid var(--global-link-color);
-      border-radius: 0 8px 8px 0;
-      background: linear-gradient(90deg, rgba(82, 173, 200, 0.12), rgba(82, 173, 200, 0.03));
-      color: var(--global-text-color);
-      font-size: 1.08em;
-    }
-
     h2 {
       display: flex;
       align-items: center;
@@ -592,12 +571,6 @@
 
 html[data-theme="dark"] {
   #main.home-main {
-    &:before {
-      background:
-        linear-gradient(135deg, rgba(82, 173, 200, 0.14), rgba(47, 127, 147, 0.04) 50%, transparent 74%),
-        linear-gradient(90deg, rgba(82, 173, 200, 0.08), transparent 46%);
-    }
-
     @include breakpoint($large) {
       .sidebar {
         border-color: rgba(82, 173, 200, 0.2);
@@ -617,7 +590,6 @@ html[data-theme="dark"] {
     .page__content {
       color: var(--global-text-color);
 
-      > p:first-of-type,
       h2 + p {
         background: rgba(82, 173, 200, 0.08);
       }

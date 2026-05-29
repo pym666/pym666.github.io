@@ -422,12 +422,7 @@
       height: auto;
       max-width: 285px;
       overflow: visible;
-      padding: 1.05rem 1.25rem 1.35rem;
-      border: 1px solid rgba(47, 127, 147, 0.16);
-      border-radius: 8px;
-      background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(247, 252, 253, 0.9));
-      box-shadow: 0 16px 45px rgba(24, 78, 92, 0.09);
-      text-align: center;
+      padding: 0;
     }
 
     .page--home {
@@ -435,61 +430,6 @@
       width: 75%;
       padding-left: 0;
       padding-right: 0;
-    }
-  }
-
-  .author__avatar img {
-    display: block;
-    max-width: 150px;
-    margin: 0.35rem auto 0.85rem;
-    border: 4px solid #fff;
-    box-shadow: 0 12px 30px rgba(21, 88, 104, 0.18);
-  }
-
-  .author__content {
-    padding-left: 0;
-    padding-right: 0;
-  }
-
-  .author__name {
-    margin-top: 0;
-    margin-bottom: 0.45rem;
-    color: var(--global-base-color);
-    letter-spacing: 0;
-  }
-
-  .author__bio {
-    margin-top: 0;
-    margin-bottom: 1rem;
-    color: var(--global-text-color);
-    line-height: 1.45;
-  }
-
-  .author__urls-wrapper {
-    display: block;
-  }
-
-  .author__urls {
-    text-align: left;
-
-    @include breakpoint($large) {
-      width: max-content;
-      max-width: 100%;
-      margin: 0 auto;
-    }
-
-    li {
-      margin-bottom: 0.25rem;
-    }
-  }
-
-  .author__urls a {
-    border-radius: 6px;
-
-    &:hover {
-      color: var(--global-link-color-hover);
-      background: rgba(82, 173, 200, 0.08);
-      text-decoration: none;
     }
   }
 }
@@ -605,16 +545,6 @@
 }
 
 html[data-theme="dark"] {
-  #main.home-main {
-    @include breakpoint($large) {
-      .sidebar {
-        border-color: rgba(82, 173, 200, 0.2);
-        background: linear-gradient(180deg, rgba(27, 34, 38, 0.96), rgba(20, 29, 33, 0.9));
-        box-shadow: 0 16px 45px rgba(0, 0, 0, 0.2);
-      }
-    }
-  }
-
   .page--home {
     .page__inner-wrap {
       border-color: rgba(82, 173, 200, 0.16);

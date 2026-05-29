@@ -18,7 +18,7 @@ Before starting my current research, I was actively involved in ICPC-style compe
 <!-- Currently, I am most interested in: -->
 
 - **Computer Vision**
-<!-- - **Robust Learning** -->
+- **Robust Learning**
 - **Noisy Label Learning**
 - **Gaze Estimation**
 

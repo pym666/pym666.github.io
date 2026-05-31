@@ -15,6 +15,5 @@
 {% endcase %}
 
 <span class="medal-label medal-label--{{ medal_type }}">
-  {% if medal_icon %}<span class="medal-label__icon" aria-hidden="true">{{ medal_icon }}</span>{% endif %}
-  <span class="medal-label__text">{{ medal_text }}</span>
+  {% if medal_icon %}<span class="medal-label__icon" aria-hidden="true">{{ medal_icon }}</span>{% endif %}<span class="medal-label__text">{{ medal_text }}</span>
 </span>

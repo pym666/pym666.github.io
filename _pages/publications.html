@@ -13,30 +13,31 @@ hide_title: true
   <h1 class="page__title">Publications</h1>
 
   {% if site.author.googlescholar %}
-    <p class="publications-profile-link">You can also find my articles on <a href="{{ site.author.googlescholar }}">my Google Scholar profile</a>.</p>
+  <p class="publications-profile-link">You can also find my articles on <a href="{{ site.author.googlescholar }}">my
+      Google Scholar profile</a>.</p>
   {% endif %}
 
   {% if site.publication_category %}
-    {% for category in site.publication_category  %}
-      {% assign section_posts = site.publications | where: "category", category[0] | reverse %}
-      {% if section_posts.size > 0 %}
-        <section class="publications-section">
-          <h2 class="publications-section__title">{{ category[1].title }}</h2>
-          <div class="publications-list">
-            {% for post in section_posts %}
-              {% include publication-single.html %}
-            {% endfor %}
-          </div>
-        </section>
-      {% endif %}
-    {% endfor %}
+  {% for category in site.publication_category %}
+  {% assign section_posts = site.publications | where: "category", category[0] | reverse %}
+  {% if section_posts.size > 0 %}
+  <section class="publications-section">
+    <h2 class="publications-section__title">{{ category[1].title }}</h2>
+    <div class="publications-list">
+      {% for post in section_posts %}
+      {% include publication-single.html %}
+      {% endfor %}
+    </div>
+  </section>
+  {% endif %}
+  {% endfor %}
   {% else %}
-    <section class="publications-section">
-      <div class="publications-list">
-        {% for post in site.publications reversed %}
-          {% include publication-single.html %}
-        {% endfor %}
-      </div>
-    </section>
+  <section class="publications-section">
+    <div class="publications-list">
+      {% for post in site.publications reversed %}
+      {% include publication-single.html %}
+      {% endfor %}
+    </div>
+  </section>
   {% endif %}
 </div>

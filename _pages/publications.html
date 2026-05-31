@@ -1,43 +1,39 @@
 ---
-layout: archive
+layout: single
 title: "Publications"
 permalink: /publications/
 author_profile: true
-page_class: publications-page
+page_class: page--publications
 ---
 
 {% include base_path %}
 
-{% if site.author.googlescholar %}
-  <p class="publications-profile-link">You can also find my articles on <a href="{{ site.author.googlescholar }}">my Google Scholar profile</a>.</p>
-{% endif %}
+<div class="publications-page">
+  {% if site.author.googlescholar %}
+    <p class="publications-profile-link">You can also find my articles on <a href="{{ site.author.googlescholar }}">my Google Scholar profile</a>.</p>
+  {% endif %}
 
-{% if site.publication_category %}
-  {% for category in site.publication_category  %}
-    {% assign title_shown = false %}
-    {% for post in site.publications reversed %}
-      {% if post.category != category[0] %}
-        {% continue %}
-      {% endif %}
-      {% unless title_shown %}
+  {% if site.publication_category %}
+    {% for category in site.publication_category  %}
+      {% assign section_posts = site.publications | where: "category", category[0] | reverse %}
+      {% if section_posts.size > 0 %}
         <section class="publications-section">
-        <h2 class="publications-section__title">{{ category[1].title }}</h2>
-        <div class="publications-list">
-        {% assign title_shown = true %}
-      {% endunless %}
-      {% include publication-single.html %}
-    {% endfor %}
-    {% if title_shown %}
-        </div>
+          <h2 class="publications-section__title">{{ category[1].title }}</h2>
+          <div class="publications-list">
+            {% for post in section_posts %}
+              {% include publication-single.html %}
+            {% endfor %}
+          </div>
         </section>
-    {% endif %}
-  {% endfor %}
-{% else %}
-  <section class="publications-section">
-    <div class="publications-list">
-  {% for post in site.publications reversed %}
-    {% include publication-single.html %}
-  {% endfor %}
-    </div>
-  </section>
-{% endif %}
+      {% endif %}
+    {% endfor %}
+  {% else %}
+    <section class="publications-section">
+      <div class="publications-list">
+        {% for post in site.publications reversed %}
+          {% include publication-single.html %}
+        {% endfor %}
+      </div>
+    </section>
+  {% endif %}
+</div>

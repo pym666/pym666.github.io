@@ -2,14 +2,11 @@
 {% case medal_type %}
 {% when "gold" %}
 {% assign medal_icon = "&#x1F947;" %}
-{% assign medal_icon = "&#x1F947;" %}
 {% assign medal_text = include.label | default: "Gold Medal" %}
 {% when "silver" %}
 {% assign medal_icon = "&#x1F948;" %}
-{% assign medal_icon = "&#x1F948;" %}
 {% assign medal_text = include.label | default: "Silver Medal" %}
 {% when "bronze" %}
-{% assign medal_icon = "&#x1F949;" %}
 {% assign medal_icon = "&#x1F949;" %}
 {% assign medal_text = include.label | default: "Bronze Medal" %}
 {% else %}
@@ -18,6 +15,7 @@
 {% endcase %}
 
 <span class="medal-label medal-label--{{ medal_type }}">
-  {% if medal_icon %}<span class="medal-label__icon" aria-hidden="true">{{ medal_icon }}</span>{% endif %}
+  {% if medal_icon %}<span class="medal-label__icon" aria-hidden="true">{{ medal_icon }}</span><span
+    class="medal-label__icon" aria-hidden="true">{{ medal_icon }}</span>{% endif %}
   <span class="medal-label__text">{{ medal_text }}</span>
 </span>

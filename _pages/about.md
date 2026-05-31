@@ -11,7 +11,7 @@ I am Yanming Peng (彭彦铭), a first-year Ph.D. student at Beijing Jiaotong Un
 
 My research focuses on **computer vision**, particularly **noisy label learning** and **gaze estimation**. My goal is to develop robust and reliable learning algorithms that can perform well under imperfect or weak supervision.
 
-Before starting my current research, I was actively involved in ICPC-style competitive programming.
+Before starting my current research, I was actively involved in algorithm programming competition (ICPC, CCPC and others).
 
 ## Research Interests
 

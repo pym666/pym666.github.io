@@ -2,6 +2,45 @@
    AWARDS PAGE
    ========================================================================== */
 
+.page--awards {
+  .page__inner-wrap {
+    padding: 1.5rem;
+    border: 1px solid rgba(47, 127, 147, 0.12);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.94);
+    box-shadow: 0 20px 55px rgba(24, 78, 92, 0.08);
+
+    @include breakpoint($small) {
+      padding: 2rem;
+    }
+  }
+
+  .page__title {
+    position: relative;
+    margin-bottom: 1.2rem;
+    padding-bottom: 0.9rem;
+    color: var(--global-base-color);
+    font-size: $type-size-2;
+    line-height: 1.1;
+
+    &:after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 4.5rem;
+      height: 4px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--global-base-color), var(--global-link-color));
+    }
+  }
+
+  .page__content {
+    color: var(--global-text-color);
+    line-height: 1.75;
+  }
+}
+
 .awards-page {
   .awards-intro {
     margin-bottom: 1.75em;
@@ -11,7 +50,7 @@
   }
 
   .awards-section {
-    margin-top: 2em;
+    margin-top: 1.5em;
   }
 
   .awards-section__header {
@@ -21,12 +60,14 @@
     gap: 1em;
     margin-bottom: 0.8em;
     padding-bottom: 0.55em;
-    border-bottom: 1px solid var(--global-border-color);
+    border-bottom: 1px solid rgba(47, 127, 147, 0.18);
 
     h2 {
       margin: 0;
       padding-bottom: 0;
       border-bottom: 0;
+      color: var(--global-base-color);
+      font-size: $type-size-4;
     }
   }
 
@@ -45,10 +86,10 @@
 
   .award-item {
     display: grid;
-    grid-template-columns: 5.5em minmax(0, 1fr);
-    gap: 1em;
-    padding: 1.05em 0;
-    border-bottom: 1px solid var(--global-border-color);
+    grid-template-columns: 4.25em minmax(0, 1fr);
+    gap: 0.65em;
+    padding: 1em 0;
+    border-bottom: 1px solid rgba(47, 127, 147, 0.14);
 
     &:first-child {
       padding-top: 0.35em;
@@ -56,7 +97,7 @@
   }
 
   .award-item__date {
-    color: var(--global-text-color-light);
+    color: var(--global-base-color);
     font-family: $sans-serif;
     font-size: 0.85em;
     font-weight: bold;
@@ -72,6 +113,7 @@
     font-family: $sans-serif-narrow;
     font-size: 1.05em;
     line-height: 1.35;
+    color: var(--global-text-color);
   }
 
   .medal-label {
@@ -121,6 +163,22 @@
     .award-item {
       grid-template-columns: 1fr;
       gap: 0.25em;
+    }
+  }
+}
+
+html[data-theme="dark"] {
+  .page--awards {
+    .page__inner-wrap {
+      border-color: rgba(82, 173, 200, 0.16);
+      background: rgba(22, 29, 33, 0.92);
+      box-shadow: 0 20px 55px rgba(0, 0, 0, 0.22);
+    }
+  }
+
+  .awards-page {
+    .award-item {
+      border-bottom-color: rgba(82, 173, 200, 0.18);
     }
   }
 }

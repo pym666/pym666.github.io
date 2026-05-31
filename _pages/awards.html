@@ -3,6 +3,7 @@ layout: single
 title: "Awards"
 permalink: /awards/
 author_profile: true
+page_class: page--awards
 award_sections:
 - key: competition
 title: "Competition Awards"
@@ -62,8 +63,9 @@ note: "Algorithm competitions"
   {% endfor %}
 </div>
 
-<!-- example -->
-<!-- <li class="award-item">
+{% comment %}
+Example:
+<li class="award-item">
   <div class="award-item__date">2023</div>
   <div class="award-item__body">
     <h3 class="award-item__title">{% include medal.html type="gold" %}, Award title</h3>
@@ -72,4 +74,5 @@ note: "Algorithm competitions"
       <p>Rank information.</p>
     </div>
   </div>
-</li> -->
+</li>
+{% endcomment %}

@@ -12,14 +12,7 @@ note: "Algorithm competitions"
 {% include base_path %}
 
 <div class="awards-page">
-  <!-- <p class="awards-intro">
-    Selected awards and honors from programming contests and algorithm competitions.
-  </p> -->
-
-  {% assign all_awards = site.awards | sort: "date" | reverse %}
-
   {% for section in page.award_sections %}
-  {% assign section_awards = all_awards | where: "category", section.key %}
   <section class="awards-section">
     <div class="awards-section__header">
       <h2>{{ section.title }}</h2>
@@ -28,32 +21,19 @@ note: "Algorithm competitions"
       {% endif %}
     </div>
 
-    {% if section_awards.size > 0 %}
+    {% if section.key == "competition" %}
     <ol class="awards-list">
-      {% for award in section_awards %}
       <li class="award-item">
         <div class="award-item__date">2023</div>
         <div class="award-item__body">
-          <h3 class="award-item__title">{Gold Medal, The 9th China Collegiate Programming Contest, Harbin Site}
-          </h3>
-          {% if award.venue or award.organization or award.location %}
-          <!-- <p class="award-item__meta">
-            {% if award.venue %}<span>{{ award.venue }}</span>{% endif %}
-            {% if award.venue and award.organization %}<span> &middot; </span>{% endif %}
-            {% if award.organization %}<span>{{ award.organization }}</span>{% endif %}
-            {% if award.location %}<span>{% if award.venue or award.organization %} &middot; {% endif %}{{
-              award.location }}</span>{% endif %}
-          </p>
+          <h3 class="award-item__title">Gold Medal, The 9th China Collegiate Programming Contest, Harbin Site</h3>
+          <p class="award-item__meta">China Collegiate Programming Contest &middot; Harbin Site</p>
           <div class="award-item__description">
-            Rank 18
-          </div> -->
-          <!-- {% endif %} -->
+            <p>Rank 18.</p>
+          </div>
         </div>
       </li>
-      {% endfor %}
     </ol>
-    {% else %}
-    <p class="awards-empty">Competition awards will be listed here.</p>
     {% endif %}
   </section>
   {% endfor %}

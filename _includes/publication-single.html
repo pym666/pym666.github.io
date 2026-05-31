@@ -1,0 +1,57 @@
+{% include base_path %}
+
+{% if post.id %}
+  {% assign title = post.title | markdownify | remove: "<p>" | remove: "</p>" %}
+{% else %}
+  {% assign title = post.title %}
+{% endif %}
+
+<article class="publication-item" itemscope itemtype="http://schema.org/ScholarlyArticle">
+  <div class="publication-item__year">
+    {% if post.date %}
+      {{ post.date | date: "%Y" }}
+    {% else %}
+      -
+    {% endif %}
+  </div>
+
+  <div class="publication-item__body">
+    <h3 class="publication-item__title" itemprop="headline">
+      {% if post.link %}
+        <a href="{{ post.link }}">{{ title }}</a>
+        <a href="{{ base_path }}{{ post.url }}" rel="permalink"><i class="fa fa-link" aria-hidden="true" title="permalink"></i><span class="sr-only">Permalink</span></a>
+      {% else %}
+        <a href="{{ base_path }}{{ post.url }}" rel="permalink">{{ title }}</a>
+      {% endif %}
+    </h3>
+
+    {% if post.authors %}
+      <p class="publication-item__authors">{{ post.authors }}</p>
+    {% endif %}
+
+    {% if post.venue or post.date %}
+      <p class="publication-item__meta">
+        {% if post.venue %}<span class="publication-item__venue">{{ post.venue }}</span>{% endif %}
+        {% if post.venue and post.date %}<span> &middot; </span>{% endif %}
+        {% if post.date %}<span>{{ post.date | date: "%Y" }}</span>{% endif %}
+      </p>
+    {% endif %}
+
+    {% if post.excerpt %}
+      <div class="publication-item__excerpt" itemprop="description">
+        {{ post.excerpt | markdownify }}
+      </div>
+    {% endif %}
+
+    {% if post.paperurl or post.slidesurl or post.posterurl or post.codeurl or post.projecturl or post.bibtexurl %}
+      <p class="publication-item__links">
+        {% if post.paperurl %}<a href="{{ post.paperurl }}">Paper</a>{% endif %}
+        {% if post.slidesurl %}<a href="{{ post.slidesurl }}">Slides</a>{% endif %}
+        {% if post.posterurl %}<a href="{{ post.posterurl }}">Poster</a>{% endif %}
+        {% if post.codeurl %}<a href="{{ post.codeurl }}">Code</a>{% endif %}
+        {% if post.projecturl %}<a href="{{ post.projecturl }}">Project</a>{% endif %}
+        {% if post.bibtexurl %}<a href="{{ post.bibtexurl }}">BibTeX</a>{% endif %}
+      </p>
+    {% endif %}
+  </div>
+</article>

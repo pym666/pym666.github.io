@@ -74,6 +74,14 @@
     line-height: 1.35;
   }
 
+  .medal-label {
+    white-space: nowrap;
+  }
+
+  .medal-label__icon {
+    margin-right: 0.25em;
+  }
+
   .award-item__meta {
     margin: 0;
     color: var(--global-text-color-light);

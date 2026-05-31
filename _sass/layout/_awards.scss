@@ -1,0 +1,118 @@
+/* ==========================================================================
+   AWARDS PAGE
+   ========================================================================== */
+
+.awards-page {
+  .awards-intro {
+    margin-bottom: 1.75em;
+    color: var(--global-text-color-light);
+    font-size: 0.95em;
+    line-height: 1.65;
+  }
+
+  .awards-section {
+    margin-top: 2em;
+  }
+
+  .awards-section__header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1em;
+    margin-bottom: 0.8em;
+    padding-bottom: 0.55em;
+    border-bottom: 1px solid var(--global-border-color);
+
+    h2 {
+      margin: 0;
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+  }
+
+  .awards-section__note {
+    margin: 0;
+    color: var(--global-text-color-light);
+    font-size: 0.8em;
+    white-space: nowrap;
+  }
+
+  .awards-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .award-item {
+    display: grid;
+    grid-template-columns: 5.5em minmax(0, 1fr);
+    gap: 1em;
+    padding: 1.05em 0;
+    border-bottom: 1px solid var(--global-border-color);
+
+    &:first-child {
+      padding-top: 0.35em;
+    }
+  }
+
+  .award-item__date {
+    color: var(--global-text-color-light);
+    font-family: $sans-serif;
+    font-size: 0.85em;
+    font-weight: bold;
+    line-height: 1.45;
+  }
+
+  .award-item__body {
+    min-width: 0;
+  }
+
+  .award-item__title {
+    margin: 0 0 0.25em;
+    font-family: $sans-serif-narrow;
+    font-size: 1.05em;
+    line-height: 1.35;
+  }
+
+  .award-item__meta {
+    margin: 0;
+    color: var(--global-text-color-light);
+    font-size: 0.88em;
+    line-height: 1.5;
+  }
+
+  .award-item__description {
+    margin: 0.45em 0 0;
+    font-size: 0.92em;
+    line-height: 1.6;
+
+    p {
+      margin-bottom: 0;
+      font-size: 1em;
+    }
+  }
+
+  .awards-empty {
+    margin: 0;
+    padding: 0.85em 0;
+    color: var(--global-text-color-light);
+    font-size: 0.92em;
+    border-bottom: 1px solid var(--global-border-color);
+  }
+
+  @include breakpoint(max-width $small) {
+    .awards-section__header {
+      display: block;
+    }
+
+    .awards-section__note {
+      margin-top: 0.25em;
+      white-space: normal;
+    }
+
+    .award-item {
+      grid-template-columns: 1fr;
+      gap: 0.25em;
+    }
+  }
+}

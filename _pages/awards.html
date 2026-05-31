@@ -1,18 +1,66 @@
 ---
-layout: archive
+layout: single
 title: "Awards"
 permalink: /awards/
 author_profile: true
+award_sections:
+  - key: competition
+    title: "Competition Awards"
+    note: "Programming contests and algorithm competitions"
 ---
 
 {% include base_path %}
 
-{% assign awards = site.awards | sort: "date" | reverse %}
+<div class="awards-page">
+  <p class="awards-intro">
+    Selected awards and honors from programming contests and algorithm competitions.
+  </p>
 
-{% if awards.size > 0 %}
-  {% for post in awards %}
-    {% include archive-single.html %}
+  {% assign all_awards = site.awards | sort: "date" | reverse %}
+
+  {% for section in page.award_sections %}
+    {% assign section_awards = all_awards | where: "category", section.key %}
+    <section class="awards-section">
+      <div class="awards-section__header">
+        <h2>{{ section.title }}</h2>
+        {% if section.note %}
+          <p class="awards-section__note">{{ section.note }}</p>
+        {% endif %}
+      </div>
+
+      {% if section_awards.size > 0 %}
+        <ol class="awards-list">
+          {% for award in section_awards %}
+            <li class="award-item">
+              <div class="award-item__date">
+                {% if award.date %}
+                  {{ award.date | date: "%Y" }}
+                {% else %}
+                  -
+                {% endif %}
+              </div>
+              <div class="award-item__body">
+                <h3 class="award-item__title">{{ award.title }}</h3>
+                {% if award.venue or award.organization or award.location %}
+                  <p class="award-item__meta">
+                    {% if award.venue %}<span>{{ award.venue }}</span>{% endif %}
+                    {% if award.venue and award.organization %}<span> &middot; </span>{% endif %}
+                    {% if award.organization %}<span>{{ award.organization }}</span>{% endif %}
+                    {% if award.location %}<span>{% if award.venue or award.organization %} &middot; {% endif %}{{ award.location }}</span>{% endif %}
+                  </p>
+                {% endif %}
+                {% if award.excerpt %}
+                  <div class="award-item__description">
+                    {{ award.excerpt | markdownify }}
+                  </div>
+                {% endif %}
+              </div>
+            </li>
+          {% endfor %}
+        </ol>
+      {% else %}
+        <p class="awards-empty">Competition awards will be listed here.</p>
+      {% endif %}
+    </section>
   {% endfor %}
-{% else %}
-  <p>Awards and honors will be listed here.</p>
-{% endif %}
+</div>

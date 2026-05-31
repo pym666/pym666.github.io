@@ -6,7 +6,9 @@
   {% assign title = post.title %}
 {% endif %}
 
-<article class="publication-item" itemscope itemtype="http://schema.org/ScholarlyArticle">
+{% assign thumbnail = post.thumbnail | default: post.image | default: post.header.teaser %}
+
+<article class="publication-item{% if thumbnail %} publication-item--with-thumbnail{% endif %}" itemscope itemtype="http://schema.org/ScholarlyArticle">
   <div class="publication-item__year">
     {% if post.date %}
       {{ post.date | date: "%Y" }}
@@ -14,6 +16,12 @@
       -
     {% endif %}
   </div>
+
+  {% if thumbnail %}
+    <a class="publication-item__thumbnail" href="{{ base_path }}{{ post.url }}" aria-label="{{ title | strip_html }}">
+      <img src="{% if thumbnail contains '://' %}{{ thumbnail }}{% elsif thumbnail contains '/' %}{{ thumbnail | prepend: base_path }}{% else %}{{ thumbnail | prepend: '/images/' | prepend: base_path }}{% endif %}" alt="">
+    </a>
+  {% endif %}
 
   <div class="publication-item__body">
     <h3 class="publication-item__title" itemprop="headline">

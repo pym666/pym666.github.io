@@ -5,14 +5,38 @@
 #main {
   @include container;
   @include clearfix;
+  position: relative;
   margin-top: 2em;
   padding-left: 1em;
   padding-right: 1em;
+  z-index: 0;
   animation: intro 0.3s both;
   animation-delay: 0.35s;
 
   @include breakpoint($x-large) {
     max-width: $x-large;
+  }
+
+  @include breakpoint($large) {
+    max-width: 1180px;
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+
+    .sidebar {
+      width: 18%;
+      height: auto;
+      max-width: 285px;
+      overflow: visible;
+      padding: 0;
+    }
+
+    .page,
+    .archive {
+      float: right;
+      width: 77%;
+      padding-left: 0;
+      padding-right: 0;
+    }
   }
 }
 
@@ -406,33 +430,6 @@
 /* ==========================================================================
    HOME PAGE
    ========================================================================== */
-
-#main.home-main {
-  position: relative;
-  max-width: 1180px;
-  z-index: 0;
-
-  @include breakpoint($large) {
-    padding-left: 1.5em;
-    padding-right: 1.5em;
-
-    .sidebar {
-      width: 18%;
-      height: auto;
-      max-width: 285px;
-      overflow: visible;
-      padding: 0;
-      // text-align: center
-    }
-
-    .page--home {
-      float: right;
-      width: 77%;
-      padding-left: 0;
-      padding-right: 0;
-    }
-  }
-}
 
 .page--home {
   .page__inner-wrap {

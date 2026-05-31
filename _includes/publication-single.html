@@ -7,11 +7,17 @@
 {% endif %}
 
 {% assign thumbnail = post.thumbnail | default: post.image | default: post.header.teaser %}
+{% assign publication_year = post.year %}
+{% unless publication_year %}
+  {% if post.date %}
+    {% assign publication_year = post.date | date: "%Y" %}
+  {% endif %}
+{% endunless %}
 
 <article class="publication-item{% if thumbnail %} publication-item--with-thumbnail{% endif %}" itemscope itemtype="http://schema.org/ScholarlyArticle">
   <div class="publication-item__year">
-    {% if post.date %}
-      {{ post.date | date: "%Y" }}
+    {% if publication_year %}
+      {{ publication_year }}
     {% else %}
       -
     {% endif %}
@@ -37,11 +43,11 @@
       <p class="publication-item__authors">{{ post.authors }}</p>
     {% endif %}
 
-    {% if post.venue or post.date %}
+    {% if post.venue or publication_year %}
       <p class="publication-item__meta">
         {% if post.venue %}<span class="publication-item__venue">{{ post.venue }}</span>{% endif %}
-        {% if post.venue and post.date %}<span> &middot; </span>{% endif %}
-        {% if post.date %}<span>{{ post.date | date: "%Y" }}</span>{% endif %}
+        {% if post.venue and publication_year %}<span> &middot; </span>{% endif %}
+        {% if publication_year %}<span>{{ publication_year }}</span>{% endif %}
       </p>
     {% endif %}
 

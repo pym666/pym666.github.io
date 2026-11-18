@@ -1,4 +1,35 @@
-# Academic Pages
+# 彭彦铭的个人学术主页
+
+本站基于 Academic Pages，由 Jekyll 生成静态页面。站点配置地址为 https://pym666.github.io 。首页介绍北京交通大学的学习与研究经历，研究方向包括计算机视觉、噪声标签学习和视线估计。顶部导航目前有 Publications 和 Awards 两项。
+
+## 内容维护入口
+
+| 要更新的内容 | 文件 | 当前用途 |
+| --- | --- | --- |
+| 首页简介、研究兴趣、新闻 | `_pages/about.md` | 对应根路径 `/`，含 CVPR 2026 论文录用消息 |
+| 侧栏身份与联系方式 | `_config.yml`、`images/profile.png` | 作者姓名、单位、头像、邮箱和学术主页链接 |
+| 导航项目及顺序 | `_data/navigation.yml` | 控制页首菜单，页面是否生成还取决于页面与集合配置 |
+| 论文与附件 | `_publications/2026-06-SeeTN.md`、`files/` | SeeTN 的摘要和会议元数据在 Markdown 中。Paper 指向 CVF，Poster 和 BibTeX 分别对应本地的 `SeeTN.pdf` 和 `SeeTN.bib` |
+| 竞赛获奖 | `_pages/awards.html` | 页面直接列出 2023 年 CCPC 哈尔滨站金奖、ICPC 西安站和济南站银奖。`_awards/` 当前为空 |
+
+## 页面如何生成
+
+- **论文**：每篇论文在 `_publications/` 中独立维护。`_pages/publications.html` 按配置的类别汇总，调用 `_includes/publication-single.html` 输出标题、年份、简介和资源链接。新增论文时沿用现有条目结构，并核对分类和附件路径。
+- **页面外观**：`_layouts/` 定义页面布局，`_includes/` 提供导航、作者侧栏和论文条目等组件。`assets/css/main.scss` 是主样式入口，样式模块与主题位于 `_sass/`。`images/` 同时保存站点图片和上游主题截图。
+- **模板内容**：`_pages/cv.md` 和 `_data/cv.json` 仍是示例简历。`_teaching/`、`_talks/`、`_portfolio/` 保留示例条目，对应集合在配置中已注释。`_posts/` 保留示例博文，其中一篇日期为 2199 年，当前配置启用了 `future: true`。
+- **辅助工具**：`markdown_generator/` 提供论文和报告的批量转换脚本与输入示例，`scripts/` 用于转换简历数据，`talkmap.py`、同名笔记本及 `talkmap/` 用于报告地点地图。
+
+## 源码中待核对的内容
+
+1. SeeTN 条目的 `citation` 仍引用模板示例论文，与 `files/SeeTN.bib` 的作者、题名及年份不一致。
+2. 获奖页的 YAML 头部中，分组的 `title` 和 `note` 与页面字段同级。`title` 因此出现两次，模板读取的 `section.title` 与 `section.note` 均缺少对应值。
+3. 简历、博客归档等页面虽未列入导航，仍有独立页面入口。核对访客可见内容时应一并检查这些路径。
+
+## 本地预览
+
+在仓库根目录运行 `bundle install` 和 `bundle exec jekyll serve`，再打开 `http://localhost:4000/`。使用 Docker 时可运行 `docker compose up --build`，端口同为 4000。
+
+## 上游 Academic Pages 模板说明
 **Academic Pages is a GitHub Pages template for personal and professional portfolio-oriented websites.**
 
 ![Academic Pages template example](images/themes/homepage-light.png "Academic Pages template example")

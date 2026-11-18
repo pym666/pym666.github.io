@@ -9,20 +9,18 @@ redirect_from:
 
 I am Yanming Peng (彭彦铭), a second-year Ph.D. student in Cyberspace Science and Technology at Beijing Jiaotong University (BJTU), advised by Prof. Yaping Huang. I earned my B.E. in Computer Science and Technology at BJTU in June 2024. I began my master's studies there that September and entered the doctoral program in September 2025.
 
-My research focuses on **computer vision**, particularly **noisy label learning** and **gaze estimation**. I study how models can learn reliably when labels are inaccurate or supervision is weak. My broader interests include foundation models, multimodal learning, and embodied intelligence.
+My research focuses on **computer vision**, particularly **noisy label learning** and **gaze estimation**. I study how models can learn reliably when labels are inaccurate or supervision is weak.
 
-Before starting my current research, I competed in programming contests, including the [ACM-ICPC and CCPC](/awards/).
+Before starting my current research, I took part in algorithmic programming competitions, including the [ACM-ICPC and CCPC](/awards/).
 
 ## Research Interests
 
-- **Computer Vision**<br>
-  <small>Learning from images and combining visual information with other modalities.</small>
-- **Robust Learning**<br>
-  <small>Learning reliably from imperfect or weak supervision.</small>
-- **Noisy Label Learning**<br>
-  <small>Identifying mislabeled examples and reducing their influence during training.</small>
-- **Gaze Estimation**<br>
-  <small>Predicting where people look and generalizing across datasets.</small>
+- **Computer Vision**
+- **Robust Learning**
+- **Noisy Label Learning**
+- **Gaze Estimation**
+
+My broader interests include foundation models, multimodal learning, and embodied intelligence. I plan to explore some of these areas in greater depth.
 
 ## News
 
